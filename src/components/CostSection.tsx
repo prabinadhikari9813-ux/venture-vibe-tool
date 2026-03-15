@@ -1,0 +1,112 @@
+import { motion } from "framer-motion";
+import { Plane, Hotel, Utensils, Train, Camera, ShieldCheck } from "lucide-react";
+
+const regions = [
+  {
+    name: "Southeast Asia",
+    daily: "$25–$50",
+    level: "Budget",
+    color: "bg-secondary",
+    breakdown: [
+      { icon: Hotel, label: "Accommodation", value: "$5–$15" },
+      { icon: Utensils, label: "Food", value: "$5–$12" },
+      { icon: Train, label: "Transport", value: "$3–$8" },
+      { icon: Camera, label: "Activities", value: "$5–$10" },
+    ],
+  },
+  {
+    name: "Southern Europe",
+    daily: "$80–$150",
+    level: "Mid-Range",
+    color: "bg-primary",
+    breakdown: [
+      { icon: Hotel, label: "Accommodation", value: "$30–$70" },
+      { icon: Utensils, label: "Food", value: "$20–$40" },
+      { icon: Train, label: "Transport", value: "$15–$25" },
+      { icon: Camera, label: "Activities", value: "$15–$25" },
+    ],
+  },
+  {
+    name: "Western Europe",
+    daily: "$120–$250",
+    level: "Comfort",
+    color: "bg-accent",
+    breakdown: [
+      { icon: Hotel, label: "Accommodation", value: "$50–$120" },
+      { icon: Utensils, label: "Food", value: "$30–$60" },
+      { icon: Train, label: "Transport", value: "$20–$40" },
+      { icon: Camera, label: "Activities", value: "$20–$35" },
+    ],
+  },
+];
+
+const CostSection = () => {
+  return (
+    <section id="costs" className="py-24 px-6">
+      <div className="container mx-auto max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <p className="font-body text-sm uppercase tracking-[0.2em] text-primary mb-3">Budget Planning</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
+            Daily Travel Costs
+          </h2>
+          <p className="font-body text-muted-foreground mt-4 max-w-lg mx-auto">
+            Average daily budgets per person, excluding international flights and travel insurance.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {regions.map((region, i) => (
+            <motion.div
+              key={region.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-shadow duration-500"
+            >
+              <div className={`${region.color} px-8 py-6`}>
+                <p className="font-body text-xs uppercase tracking-widest text-primary-foreground/70 mb-1">
+                  {region.level}
+                </p>
+                <h3 className="font-display text-xl font-bold text-primary-foreground">{region.name}</h3>
+                <p className="font-display text-3xl font-bold text-primary-foreground mt-2">{region.daily}</p>
+                <p className="font-body text-xs text-primary-foreground/70">per day</p>
+              </div>
+              <div className="p-8 space-y-4">
+                {region.breakdown.map((item) => (
+                  <div key={item.label} className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <item.icon className="h-4 w-4 text-muted-foreground" />
+                      <span className="font-body text-sm text-foreground">{item.label}</span>
+                    </div>
+                    <span className="font-body text-sm font-semibold text-foreground">{item.value}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12 flex items-start gap-3 p-6 rounded-xl bg-secondary/10 border border-secondary/20 max-w-2xl mx-auto"
+        >
+          <ShieldCheck className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
+          <p className="font-body text-sm text-muted-foreground">
+            <span className="font-semibold text-foreground">Pro tip:</span> Budget an extra 15–20% as a contingency fund. 
+            Unexpected costs like medical visits, lost items, or last-minute itinerary changes are common.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default CostSection;
