@@ -145,12 +145,14 @@ const BudgetCalculator = () => {
                   <p className="font-body text-xs text-muted-foreground">On-ground costs</p>
                   <p className="font-display text-2xl font-bold text-foreground">${total.toLocaleString()}</p>
                 </div>
-                <div>
-                  <p className="font-body text-xs text-muted-foreground flex items-center gap-1 justify-center sm:justify-end">
-                    <Plane className="h-3 w-3" /> Est. round-trip flights
-                  </p>
-                  <p className="font-display text-lg font-semibold text-muted-foreground">${flightEstimate.toLocaleString()}</p>
-                </div>
+                {!isNepal && (
+                  <div>
+                    <p className="font-body text-xs text-muted-foreground flex items-center gap-1 justify-center sm:justify-end">
+                      <Plane className="h-3 w-3" /> Est. round-trip flights
+                    </p>
+                    <p className="font-display text-lg font-semibold text-muted-foreground">${flightEstimate.toLocaleString()}</p>
+                  </div>
+                )}
                 <div className="pt-3 border-t border-border w-full text-center sm:text-right">
                   <p className="font-body text-xs uppercase tracking-widest text-primary mb-1">Estimated Total</p>
                   <p className="font-display text-4xl font-bold text-gradient">${grandTotal.toLocaleString()}</p>
