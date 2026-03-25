@@ -3,6 +3,20 @@ import { Plane, Hotel, Utensils, Train, Camera, ShieldCheck } from "lucide-react
 
 const regions = [
   {
+    name: "Mardi Trek (Nepal)",
+    daily: "NPR 1,500–2,500",
+    level: "Budget (Nepali)",
+    color: "bg-secondary",
+    highlight: true,
+    breakdown: [
+      { icon: Hotel, label: "Teahouse Stay", value: "NPR 300–500" },
+      { icon: Utensils, label: "Dal Bhat & Meals", value: "NPR 600–1,000" },
+      { icon: Train, label: "Local Bus/Jeep", value: "NPR 200–400" },
+      { icon: Camera, label: "Permits & Tips", value: "NPR 400–600" },
+    ],
+    note: "Total: ~NPR 10,000/person for 5-day trek",
+  },
+  {
     name: "Southeast Asia",
     daily: "$25–$50",
     level: "Budget",
