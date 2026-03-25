@@ -30,10 +30,13 @@ const BudgetCalculator = () => {
   const [days, setDays] = useState(7);
   const [style, setStyle] = useState<"budget" | "midrange" | "comfort">("midrange");
 
-  const daily = destinations[destination].daily[style];
+  const dest = destinations[destination];
+  const daily = dest.daily[style];
   const total = daily * days;
-  const flightEstimate = style === "budget" ? 400 : style === "midrange" ? 700 : 1200;
+  const isNepal = dest.name === "Nepal Treks";
+  const flightEstimate = isNepal ? 0 : style === "budget" ? 400 : style === "midrange" ? 700 : 1200;
   const grandTotal = total + flightEstimate;
+  const nprTotal = isNepal ? Math.round(total * (dest.rate || 133)) : null;
 
   return (
     <section id="calculator" className="py-24 px-6 bg-card">
