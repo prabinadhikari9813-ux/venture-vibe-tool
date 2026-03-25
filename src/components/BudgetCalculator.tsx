@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Calculator, Plane, Hotel, Utensils, Train, Camera, ShieldCheck } from "lucide-react";
 
 const destinations = [
+  { name: "Nepal Treks", daily: { budget: 15, midrange: 35, comfort: 80 }, currency: "NPR", rate: 133 },
   { name: "Southeast Asia", daily: { budget: 30, midrange: 60, comfort: 120 } },
   { name: "Southern Europe", daily: { budget: 70, midrange: 120, comfort: 200 } },
   { name: "Western Europe", daily: { budget: 100, midrange: 170, comfort: 280 } },
