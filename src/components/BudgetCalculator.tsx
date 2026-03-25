@@ -154,6 +154,11 @@ const BudgetCalculator = () => {
                 <div className="pt-3 border-t border-border w-full text-center sm:text-right">
                   <p className="font-body text-xs uppercase tracking-widest text-primary mb-1">Estimated Total</p>
                   <p className="font-display text-4xl font-bold text-gradient">${grandTotal.toLocaleString()}</p>
+                  {nprTotal && (
+                    <p className="font-body text-sm text-muted-foreground mt-1">
+                      ≈ NPR {nprTotal.toLocaleString()}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
