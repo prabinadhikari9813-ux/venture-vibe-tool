@@ -3,6 +3,7 @@ import { Clock, MapPin, DollarSign } from "lucide-react";
 import coastalImg from "@/assets/route-coastal.jpg";
 import asiaImg from "@/assets/route-asia.jpg";
 import europeImg from "@/assets/route-europe.jpg";
+import mardiImg from "@/assets/route-mardi.jpg";
 
 const routes = [
   {
@@ -28,6 +29,14 @@ const routes = [
     cost: "$2,500 – $4,000",
     description: "Discover fairytale villages, dramatic mountain passes, and world-class cuisine in the heart of the Alps.",
     image: europeImg,
+  },
+  {
+    title: "Mardi Himal Trek",
+    region: "Nepal · Annapurna Region",
+    duration: "5–7 days",
+    cost: "NPR 10,000 (Nepali) · $150–$300 (Foreign)",
+    description: "Trek through rhododendron forests to stunning viewpoints of Machapuchare and Annapurna South. One of Nepal's most affordable and scenic short treks.",
+    image: mardiImg,
   },
 ];
 

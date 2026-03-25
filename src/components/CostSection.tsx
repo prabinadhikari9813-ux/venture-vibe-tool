@@ -3,6 +3,20 @@ import { Plane, Hotel, Utensils, Train, Camera, ShieldCheck } from "lucide-react
 
 const regions = [
   {
+    name: "Mardi Trek (Nepal)",
+    daily: "NPR 1,500–2,500",
+    level: "Budget (Nepali)",
+    color: "bg-secondary",
+    highlight: true,
+    breakdown: [
+      { icon: Hotel, label: "Teahouse Stay", value: "NPR 300–500" },
+      { icon: Utensils, label: "Dal Bhat & Meals", value: "NPR 600–1,000" },
+      { icon: Train, label: "Local Bus/Jeep", value: "NPR 200–400" },
+      { icon: Camera, label: "Permits & Tips", value: "NPR 400–600" },
+    ],
+    note: "Total: ~NPR 10,000/person for 5-day trek",
+  },
+  {
     name: "Southeast Asia",
     daily: "$25–$50",
     level: "Budget",
@@ -59,34 +73,41 @@ const CostSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {regions.map((region, i) => (
             <motion.div
               key={region.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-shadow duration-500"
+              transition={{ delay: i * 0.12 }}
+              className={`rounded-2xl border bg-card overflow-hidden hover:shadow-xl transition-shadow duration-500 ${
+                region.highlight ? "border-primary ring-2 ring-primary/20" : "border-border"
+              }`}
             >
-              <div className={`${region.color} px-8 py-6`}>
+              <div className={`${region.color} px-6 py-5`}>
                 <p className="font-body text-xs uppercase tracking-widest text-primary-foreground/70 mb-1">
                   {region.level}
                 </p>
-                <h3 className="font-display text-xl font-bold text-primary-foreground">{region.name}</h3>
-                <p className="font-display text-3xl font-bold text-primary-foreground mt-2">{region.daily}</p>
+                <h3 className="font-display text-lg font-bold text-primary-foreground">{region.name}</h3>
+                <p className="font-display text-2xl font-bold text-primary-foreground mt-1">{region.daily}</p>
                 <p className="font-body text-xs text-primary-foreground/70">per day</p>
               </div>
-              <div className="p-8 space-y-4">
+              <div className="p-6 space-y-3">
                 {region.breakdown.map((item) => (
                   <div key={item.label} className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2">
                       <item.icon className="h-4 w-4 text-muted-foreground" />
                       <span className="font-body text-sm text-foreground">{item.label}</span>
                     </div>
                     <span className="font-body text-sm font-semibold text-foreground">{item.value}</span>
                   </div>
                 ))}
+                {region.note && (
+                  <p className="font-body text-xs font-semibold text-primary pt-2 border-t border-border">
+                    {region.note}
+                  </p>
+                )}
               </div>
             </motion.div>
           ))}

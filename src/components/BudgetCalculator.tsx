@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Calculator, Plane, Hotel, Utensils, Train, Camera, ShieldCheck } from "lucide-react";
 
 const destinations = [
+  { name: "Nepal Treks", daily: { budget: 15, midrange: 35, comfort: 80 }, currency: "NPR", rate: 133 },
   { name: "Southeast Asia", daily: { budget: 30, midrange: 60, comfort: 120 } },
   { name: "Southern Europe", daily: { budget: 70, midrange: 120, comfort: 200 } },
   { name: "Western Europe", daily: { budget: 100, midrange: 170, comfort: 280 } },
@@ -29,10 +30,13 @@ const BudgetCalculator = () => {
   const [days, setDays] = useState(7);
   const [style, setStyle] = useState<"budget" | "midrange" | "comfort">("midrange");
 
-  const daily = destinations[destination].daily[style];
+  const dest = destinations[destination];
+  const daily = dest.daily[style];
   const total = daily * days;
-  const flightEstimate = style === "budget" ? 400 : style === "midrange" ? 700 : 1200;
+  const isNepal = dest.name === "Nepal Treks";
+  const flightEstimate = isNepal ? 0 : style === "budget" ? 400 : style === "midrange" ? 700 : 1200;
   const grandTotal = total + flightEstimate;
+  const nprTotal = isNepal ? Math.round(total * (dest.rate || 133)) : null;
 
   return (
     <section id="calculator" className="py-24 px-6 bg-card">
@@ -141,15 +145,22 @@ const BudgetCalculator = () => {
                   <p className="font-body text-xs text-muted-foreground">On-ground costs</p>
                   <p className="font-display text-2xl font-bold text-foreground">${total.toLocaleString()}</p>
                 </div>
-                <div>
-                  <p className="font-body text-xs text-muted-foreground flex items-center gap-1 justify-center sm:justify-end">
-                    <Plane className="h-3 w-3" /> Est. round-trip flights
-                  </p>
-                  <p className="font-display text-lg font-semibold text-muted-foreground">${flightEstimate.toLocaleString()}</p>
-                </div>
+                {!isNepal && (
+                  <div>
+                    <p className="font-body text-xs text-muted-foreground flex items-center gap-1 justify-center sm:justify-end">
+                      <Plane className="h-3 w-3" /> Est. round-trip flights
+                    </p>
+                    <p className="font-display text-lg font-semibold text-muted-foreground">${flightEstimate.toLocaleString()}</p>
+                  </div>
+                )}
                 <div className="pt-3 border-t border-border w-full text-center sm:text-right">
                   <p className="font-body text-xs uppercase tracking-widest text-primary mb-1">Estimated Total</p>
                   <p className="font-display text-4xl font-bold text-gradient">${grandTotal.toLocaleString()}</p>
+                  {nprTotal && (
+                    <p className="font-body text-sm text-muted-foreground mt-1">
+                      ≈ NPR {nprTotal.toLocaleString()}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
