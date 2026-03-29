@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Map, Menu, X } from "lucide-react";
+import { Map, SquareMenu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -25,7 +25,7 @@ const Navbar = () => {
           ))}
         </div>
         <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
-          {open ? <X /> : <Menu />}
+          {open ? <X /> : <SquareMenu />}
         </button>
       </div>
       <AnimatePresence>
