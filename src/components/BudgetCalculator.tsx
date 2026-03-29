@@ -142,7 +142,7 @@ const BudgetCalculator = () => {
 
               <div className="flex flex-col justify-center items-center sm:items-end text-center sm:text-right gap-4">
                 <div>
-                  <p className="font-body text-xs text-muted-foreground">On-ground costs</p>
+                  <p className="font-body text-xs text-muted-foreground">​</p>
                   <p className="font-display text-2xl font-bold text-foreground">${total.toLocaleString()}</p>
                 </div>
                 {!isNepal && (
@@ -154,7 +154,7 @@ const BudgetCalculator = () => {
                   </div>
                 )}
                 <div className="pt-3 border-t border-border w-full text-center sm:text-right">
-                  <p className="font-body text-xs uppercase tracking-widest text-primary mb-1">Estimated Total</p>
+                  <p className="font-body text-xs uppercase tracking-widest text-primary mb-1">​</p>
                   <p className="font-display text-4xl font-bold text-gradient">${grandTotal.toLocaleString()}</p>
                   {nprTotal && (
                     <p className="font-body text-sm text-muted-foreground mt-1">
