@@ -55,42 +55,6 @@ const regions = [
     ],
     note: "Total: ~NPR 15,000/person for 9-day trek",
   },
-  {
-    name: "Southeast Asia",
-    daily: "$25–$50",
-    level: "Budget",
-    color: "bg-secondary",
-    breakdown: [
-      { icon: Hotel, label: "Accommodation", value: "$5–$15" },
-      { icon: Utensils, label: "Food", value: "$5–$12" },
-      { icon: Train, label: "Transport", value: "$3–$8" },
-      { icon: Camera, label: "Activities", value: "$5–$10" },
-    ],
-  },
-  {
-    name: "Southern Europe",
-    daily: "$80–$150",
-    level: "Mid-Range",
-    color: "bg-primary",
-    breakdown: [
-      { icon: Hotel, label: "Accommodation", value: "$30–$70" },
-      { icon: Utensils, label: "Food", value: "$20–$40" },
-      { icon: Train, label: "Transport", value: "$15–$25" },
-      { icon: Camera, label: "Activities", value: "$15–$25" },
-    ],
-  },
-  {
-    name: "Western Europe",
-    daily: "$120–$250",
-    level: "Comfort",
-    color: "bg-accent",
-    breakdown: [
-      { icon: Hotel, label: "Accommodation", value: "$50–$120" },
-      { icon: Utensils, label: "Food", value: "$30–$60" },
-      { icon: Train, label: "Transport", value: "$20–$40" },
-      { icon: Camera, label: "Activities", value: "$20–$35" },
-    ],
-  },
 ];
 
 const CostSection = () => {
