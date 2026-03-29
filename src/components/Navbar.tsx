@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const links = ["Routes", "Tips", "Costs", "About"];
+  const links = ["Routes", "Tips", "Costs", "Nepal", "Map", "Calculator"];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">

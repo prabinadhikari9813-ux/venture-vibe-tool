@@ -1,10 +1,23 @@
 import { motion } from "framer-motion";
-import { Plane, Hotel, Utensils, Train, Camera, ShieldCheck } from "lucide-react";
+import { Hotel, Utensils, Train, Camera, ShieldCheck } from "lucide-react";
 
 const regions = [
   {
-    name: "Mardi Trek (Nepal)",
-    daily: "NPR 1,500–2,500",
+    name: "Australian Camp",
+    daily: "NPR 1,500",
+    level: "Easy Trek",
+    color: "bg-secondary",
+    breakdown: [
+      { icon: Hotel, label: "Homestay", value: "NPR 500" },
+      { icon: Utensils, label: "Meals", value: "NPR 500" },
+      { icon: Train, label: "Transport", value: "NPR 300" },
+      { icon: Camera, label: "Guide (opt.)", value: "NPR 200" },
+    ],
+    note: "Total: ~NPR 3,000 for 1–2 days",
+  },
+  {
+    name: "Mardi Trek",
+    daily: "NPR 2,000",
     level: "Budget (Nepali)",
     color: "bg-secondary",
     highlight: true,
@@ -15,6 +28,32 @@ const regions = [
       { icon: Camera, label: "Permits & Tips", value: "NPR 400–600" },
     ],
     note: "Total: ~NPR 10,000/person for 5-day trek",
+  },
+  {
+    name: "Poon Hill Trek",
+    daily: "NPR 2,000",
+    level: "Budget (Nepali)",
+    color: "bg-secondary",
+    breakdown: [
+      { icon: Hotel, label: "Teahouse Stay", value: "NPR 300–500" },
+      { icon: Utensils, label: "Meals", value: "NPR 600–900" },
+      { icon: Train, label: "Transport", value: "NPR 200–300" },
+      { icon: Camera, label: "Permits", value: "NPR 400–500" },
+    ],
+    note: "Total: ~NPR 8,000/person for 4-day trek",
+  },
+  {
+    name: "ABC Trek",
+    daily: "NPR 1,700",
+    level: "Moderate",
+    color: "bg-primary",
+    breakdown: [
+      { icon: Hotel, label: "Teahouse Stay", value: "NPR 300–600" },
+      { icon: Utensils, label: "Meals", value: "NPR 700–1,200" },
+      { icon: Train, label: "Transport", value: "NPR 200–400" },
+      { icon: Camera, label: "Permits & Guide", value: "NPR 500–800" },
+    ],
+    note: "Total: ~NPR 15,000/person for 9-day trek",
   },
   {
     name: "Southeast Asia",
@@ -80,7 +119,7 @@ const CostSection = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.12 }}
+              transition={{ delay: i * 0.08 }}
               className={`rounded-2xl border bg-card overflow-hidden hover:shadow-xl transition-shadow duration-500 ${
                 region.highlight ? "border-primary ring-2 ring-primary/20" : "border-border"
               }`}
@@ -121,7 +160,7 @@ const CostSection = () => {
         >
           <ShieldCheck className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
           <p className="font-body text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">Pro tip:</span> Budget an extra 15–20% as a contingency fund. 
+            <span className="font-semibold text-foreground">Pro tip:</span> Budget an extra 15–20% as a contingency fund.
             Unexpected costs like medical visits, lost items, or last-minute itinerary changes are common.
           </p>
         </motion.div>
