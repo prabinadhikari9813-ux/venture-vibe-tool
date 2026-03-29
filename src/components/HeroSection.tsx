@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroImage} alt="Winding mountain road at sunset" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 text-sidebar-primary bg-accent-foreground text-center" />
+        <div className="absolute inset-0 text-sidebar-primary bg-accent-foreground text-center text-sm border-sidebar-primary" />
       </div>
       <div className="relative z-10 text-center px-6 max-w-4xl">
         <motion.p
