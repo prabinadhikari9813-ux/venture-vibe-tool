@@ -4,6 +4,7 @@ import RoutesSection from "@/components/RoutesSection";
 import TipsSection from "@/components/TipsSection";
 import CostSection from "@/components/CostSection";
 import NepalTrekSection from "@/components/NepalTrekSection";
+import MapSection from "@/components/MapSection";
 import BudgetCalculator from "@/components/BudgetCalculator";
 import Footer from "@/components/Footer";
 
@@ -15,6 +16,7 @@ const Index = () => (
     <TipsSection />
     <CostSection />
     <NepalTrekSection />
+    <MapSection />
     <BudgetCalculator />
     <Footer />
   </div>
