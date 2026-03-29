@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        <a href="#" className="flex items-center gap-2 font-display text-xl font-bold text-foreground">
+        <a href="#travel with prabin web" className="flex items-center gap-2 font-display text-xl font-bold text-foreground">
           <Map className="h-6 w-6 text-primary" />
           Wanderlust
         </a>

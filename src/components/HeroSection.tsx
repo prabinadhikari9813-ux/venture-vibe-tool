@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroImage} alt="Winding mountain road at sunset" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-foreground/40" />
+        <div className="absolute inset-0 text-sidebar-primary bg-accent-foreground text-center" />
       </div>
       <div className="relative z-10 text-center px-6 max-w-4xl">
         <motion.p
@@ -16,7 +16,7 @@ const HeroSection = () => {
           transition={{ delay: 0.2 }}
           className="font-body text-sm uppercase tracking-[0.3em] text-primary-foreground/80 mb-4"
         >
-          Your journey starts here
+          Your journey starts with prabin web
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
