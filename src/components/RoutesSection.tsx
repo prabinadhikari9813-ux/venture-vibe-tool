@@ -41,30 +41,6 @@ const routes = [
     description: "An easy overnight trek from Pokhara with stunning Annapurna panorama. Ideal for families, beginners, or travelers with limited time.",
     image: australianCampImg,
   },
-  {
-    title: "",
-    region: "Southern Europe",
-    duration: "10–14 days",
-    cost: "$1,800 – $3,200",
-    description: "Wind along turquoise coastlines from Barcelona to Amalfi, with stops at hidden beaches and clifftop villages.",
-    image: coastalImg,
-  },
-  {
-    title: "Southeast Asia Temple Trail",
-    region: "Cambodia · Thailand · Laos",
-    duration: "21–30 days",
-    cost: "$800 – $1,500",
-    description: "Explore ancient temples, bustling night markets, and serene rice paddies on one of the world's most budget-friendly routes.",
-    image: asiaImg,
-  },
-  {
-    title: "Alpine Village Explorer",
-    region: "Switzerland · Austria",
-    duration: "7–10 days",
-    cost: "$2,500 – $4,000",
-    description: "Discover fairytale villages, dramatic mountain passes, and world-class cuisine in the heart of the Alps.",
-    image: europeImg,
-  },
 ];
 
 const RoutesSection = () => {

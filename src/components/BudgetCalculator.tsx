@@ -4,12 +4,6 @@ import { Calculator, Plane, Hotel, Utensils, Train, Camera, ShieldCheck } from "
 
 const destinations = [
   { name: "Nepal Treks", daily: { budget: 15, midrange: 35, comfort: 80 }, currency: "NPR", rate: 133 },
-  { name: "Southeast Asia", daily: { budget: 30, midrange: 60, comfort: 120 } },
-  { name: "Southern Europe", daily: { budget: 70, midrange: 120, comfort: 200 } },
-  { name: "Western Europe", daily: { budget: 100, midrange: 170, comfort: 280 } },
-  { name: "South America", daily: { budget: 35, midrange: 75, comfort: 150 } },
-  { name: "East Africa", daily: { budget: 40, midrange: 90, comfort: 180 } },
-  { name: "Japan & Korea", daily: { budget: 60, midrange: 130, comfort: 250 } },
 ];
 
 const styles = [
@@ -124,54 +118,7 @@ const BudgetCalculator = () => {
 
           {/* Results */}
           <div className="border-t border-border pt-8 space-y-6">
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="space-y-3">
-                <p className="font-body text-xs uppercase tracking-widest text-muted-foreground">Daily Breakdown</p>
-                {breakdownRatios.map((item) => (
-                  <div key={item.label} className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <item.icon className="h-4 w-4 text-muted-foreground" />
-                      <span className="font-body text-sm text-foreground">{item.label}</span>
-                    </div>
-                    <span className="font-body text-sm font-semibold text-foreground">
-                      ${Math.round(daily * item.pct)}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col justify-center items-center sm:items-end text-center sm:text-right gap-4">
-                <div>
-                  <p className="font-body text-xs text-muted-foreground">​</p>
-                  <p className="font-display text-2xl font-bold text-foreground">${total.toLocaleString()}</p>
-                </div>
-                {!isNepal && (
-                  <div>
-                    <p className="font-body text-xs text-muted-foreground flex items-center gap-1 justify-center sm:justify-end">
-                      <Plane className="h-3 w-3" /> Est. round-trip flights
-                    </p>
-                    <p className="font-display text-lg font-semibold text-muted-foreground">${flightEstimate.toLocaleString()}</p>
-                  </div>
-                )}
-                <div className="pt-3 border-t border-border w-full text-center sm:text-right">
-                  <p className="font-body text-xs uppercase tracking-widest text-primary mb-1">​</p>
-                  <p className="font-display text-4xl font-bold text-gradient">${grandTotal.toLocaleString()}</p>
-                  {nprTotal && (
-                    <p className="font-body text-sm text-muted-foreground mt-1">
-                      ≈ NPR {nprTotal.toLocaleString()}
-                    </p>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3 p-4 rounded-xl bg-secondary/10 border border-secondary/20">
-              <ShieldCheck className="h-5 w-5 text-secondary mt-0.5 shrink-0" />
-              <p className="font-body text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">Note:</span> These are estimates based on average traveler spending. 
-                Actual costs vary by season, booking timing, and personal preferences. Add 15–20% as a buffer.
-              </p>
-            </div>
+            5
           </div>
         </motion.div>
       </div>

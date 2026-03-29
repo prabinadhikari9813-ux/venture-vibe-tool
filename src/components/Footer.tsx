@@ -7,7 +7,7 @@ const Footer = () => (
         <div>
           <a href="#" className="flex items-center gap-2 font-display text-xl font-bold text-foreground mb-3">
             <Map className="h-5 w-5 text-primary" />
-            Wanderlust
+            TRAVEL WITH PRABIN
           </a>
           <p className="font-body text-sm text-muted-foreground max-w-xs">
             Curated travel routes, expert tips, and honest cost breakdowns to make your next adventure unforgettable.
