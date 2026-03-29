@@ -42,7 +42,7 @@ const routes = [
     image: australianCampImg,
   },
   {
-    title: "Mediterranean Coastal Drive",
+    title: "",
     region: "Southern Europe",
     duration: "10–14 days",
     cost: "$1,800 – $3,200",
