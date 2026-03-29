@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <a href="#travel with prabin web" className="flex items-center gap-2 font-display text-xl font-bold text-foreground">
           <Map className="h-6 w-6 text-primary" />
-          Wanderlust
+          TRAVEL WITH PRABIN
         </a>
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
