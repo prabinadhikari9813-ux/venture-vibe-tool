@@ -37,7 +37,7 @@ const routes = [
     title: "Australian Camp & Dhampus",
     region: "Nepal · Kaski · Pokhara",
     duration: "1–2 days",
-    cost: "NPR 3,000 (Nepali) · $30–$60 (Foreign)",
+    cost: "NPR 5,000 (Nepali) · $30–$60 (Foreign)",
     description: "An easy overnight trek from Pokhara with stunning Annapurna panorama. Ideal for families, beginners, or travelers with limited time.",
     image: australianCampImg,
   },
